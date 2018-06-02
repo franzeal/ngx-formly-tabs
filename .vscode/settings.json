@@ -1,0 +1,32 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "files.exclude": {
+    "dist": true,
+    "**/*.map": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "[markdown]": {
+      "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.tabSize": 4
+  },
+  "[css]": {
+    "editor.tabSize": 2
+  },
+  "[scss]": {
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "editor.detectIndentation": false,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "terminal.integrated.cwd": "src"
+}

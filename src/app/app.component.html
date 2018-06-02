@@ -1,0 +1,21 @@
+<div class="p-4">
+  <div class="text-center">
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="mt-4">
+    <formly-form [fields]="fields" [model]="model">
+    </formly-form>
+  </div>
+  <div class="mt-4">
+    <h2>Fields:</h2>
+    <div>
+      <pre>{{ pristineFields | json }}</pre>
+    </div>
+  </div>
+  <div class="mt-4">
+    <h2>Model:</h2>
+    <div>
+      <pre>{{ model | json }}</pre>
+    </div>
+  </div>
+</div>
