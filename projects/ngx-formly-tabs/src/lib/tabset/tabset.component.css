@@ -1,0 +1,9 @@
+.nav-link {
+    cursor: pointer;
+    cursor: hand;
+}
+:host > .content {
+    border: 1px solid #ddd;
+    border-top: 0;
+    padding: 1em;
+}

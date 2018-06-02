@@ -1,0 +1,36 @@
+{
+  "name": "ngx-formly-tabs",
+  "version": "1.0.0",
+  "author": "Tony Franzese <tony83@gmail.com>",
+  "contributors": [
+    "Tony Franzese <tony83@gmail.com>"
+  ],
+  "keywords": [
+    "angular",
+    "forms",
+    "ng-formly",
+    "ngx-formly",
+    "formly",
+    "angular",
+    "angular forms",
+    "json forms",
+    "form library",
+    "tabs"
+  ],
+  "license": "MIT",
+  "description": "ngx-formly-tabs is an Angular module that adds Components that enable flexible tab use for @ngx-formly.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franzeal/ngx-formly-tabs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/franzeal/ngx-formly-tabs/issues"
+  },
+  "homepage": "https://github.com/franzeal/ngx-formly-tabs#readme",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0",
+    "@angular/core": "^6.0.0",
+    "@ngx-formly/core": "^4.0.0",
+    "rxjs": "^6.0.0"
+  }
+}
