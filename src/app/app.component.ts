@@ -10,11 +10,12 @@ export class AppComponent {
     pristineFields = [
         {
             wrappers: ['tabset'],
+            className: 'container-fluid',
             fieldGroup: [
                 {
                     wrappers: ['tab'],
                     templateOptions: {
-                        tabTitle: 'Primary'
+                        tabTitle: 'Primary',
                     },
                     fieldGroup: [
                         {
@@ -24,7 +25,10 @@ export class AppComponent {
                                 label: 'Name'
                             }
                         }
-                    ]
+                    ],
+                    expressionProperties: {
+                        'templateOptions.tabHidden': 'model.hidePrimary === true'
+                    }
                 },
                 {
                     wrappers: ['tab'],
@@ -40,9 +44,30 @@ export class AppComponent {
                                 options: ['Biking', 'Hiking', 'Reading'].map(hobby => ({ label: hobby, value: hobby }))
                             }
                         }
-                    ]
+                    ],
+                    expressionProperties: {
+                        'templateOptions.tabDisabled': 'model.disableSecondary === true'
+                    }
                 }
             ]
+        },
+        {
+            key: 'hidePrimary',
+            type: 'checkbox',
+            className: 'mt-4',
+            templateOptions: {
+                label: 'Hide Primary'
+            },
+            defaultValue: false
+        },
+        {
+            key: 'disableSecondary',
+            type: 'checkbox',
+            className: 'mt-4',
+            templateOptions: {
+                label: 'Disable Secondary'
+            },
+            defaultValue: false
         }
     ];
     fields = JSON.parse(JSON.stringify(this.pristineFields));

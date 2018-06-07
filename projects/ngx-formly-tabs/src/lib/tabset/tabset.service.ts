@@ -21,4 +21,8 @@ export class TabsetService {
     remove(tab: TabComponent): void {
         this._tabs.next(this._tabs.value.filter(t => t !== tab));
     }
+
+    update(): void {
+        this._tabs.next(this.tabs);
+    }
 }

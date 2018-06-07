@@ -12,6 +12,7 @@ import { Observable, Subscription, timer } from 'rxjs';
 export class TabsetComponent implements AfterContentInit, OnDestroy {
     private subscription: Subscription;
     private _tabs: TabComponent[] = [];
+    private _visibleCount = 0;
 
     constructor(
         private tabsetService: TabsetService
@@ -19,6 +20,10 @@ export class TabsetComponent implements AfterContentInit, OnDestroy {
 
     get tabs(): TabComponent[] {
         return this._tabs;
+    }
+
+    get visibleCount(): number {
+        return this._visibleCount;
     }
 
     ngAfterContentInit(): void {
@@ -47,9 +52,10 @@ export class TabsetComponent implements AfterContentInit, OnDestroy {
 
             const tabs = this.tabsetService.tabs;
             this._tabs = tabs;
+            this._visibleCount = tabs.filter(t => !t.hidden).length;
 
-            if (!tabs.some(pane => pane.active)) {
-                this.select(tabs[0]);
+            if (!tabs.some(tab => tab.active && !tab.disabled && !tab.hidden)) {
+                this.select(tabs.find(t => !t.disabled && !t.hidden));
             }
         });
     }

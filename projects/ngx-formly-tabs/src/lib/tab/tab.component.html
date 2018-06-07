@@ -1,1 +1,1 @@
-<ng-content *ngIf="!tabsetService || active"></ng-content>
+<ng-content *ngIf="!tabsetService || (active && !disabled && !hidden)"></ng-content>

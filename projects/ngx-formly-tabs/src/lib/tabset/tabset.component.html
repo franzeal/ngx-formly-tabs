@@ -1,10 +1,10 @@
 <ul class="nav nav-tabs">
-  <li class="nav-item" *ngFor="let tab of tabs" role="presentation" (click)="select(tab)">
-    <div class="nav-link" [ngClass]="{active: tab.active}">
+  <li class="nav-item" *ngFor="let tab of tabs | visible" role="presentation" (click)="!tab.disabled && !tab.hidden && select(tab)">
+    <div class="nav-link" [ngClass]="{active: tab.active && !tab.disabled && !tab.hidden, disabled: tab.disabled}">
       {{ tab.title }}
     </div>
   </li>
 </ul>
-<div class="content">
+<div class="content" [ngClass]="{empty: visibleCount === 0}">
   <ng-content></ng-content>
 </div>

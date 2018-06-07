@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { TabsetComponent } from './tabset/tabset.component';
 import { TabComponent } from './tab/tab.component';
+import { VisiblePipe } from './tabset/visible.pipe';
 import { FORMLY_TABS_FORMLY_CONFIG, FIELD_TYPE_COMPONENTS } from './formly-tabs.config';
 
 @NgModule({
@@ -16,7 +17,9 @@ import { FORMLY_TABS_FORMLY_CONFIG, FIELD_TYPE_COMPONENTS } from './formly-tabs.
         TabsetComponent,
         TabComponent,
 
-        FIELD_TYPE_COMPONENTS
+        FIELD_TYPE_COMPONENTS,
+
+        VisiblePipe,
     ],
     exports: [
         TabsetComponent,
