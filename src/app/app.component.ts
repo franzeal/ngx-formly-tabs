@@ -10,7 +10,7 @@ export class AppComponent {
     pristineFields = [
         {
             wrappers: ['tabset'],
-            className: 'container-fluid',
+            className: 'd-block',
             fieldGroup: [
                 {
                     wrappers: ['tab'],
@@ -54,7 +54,7 @@ export class AppComponent {
         {
             key: 'hidePrimary',
             type: 'checkbox',
-            className: 'mt-4',
+            className: 'd-block mt-4',
             templateOptions: {
                 label: 'Hide Primary'
             },
@@ -63,7 +63,7 @@ export class AppComponent {
         {
             key: 'disableSecondary',
             type: 'checkbox',
-            className: 'mt-4',
+            className: 'd-block mt-4',
             templateOptions: {
                 label: 'Disable Secondary'
             },
