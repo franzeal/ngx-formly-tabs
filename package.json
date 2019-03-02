@@ -1,6 +1,7 @@
 {
   "name": "ngx-formly-tabs-app",
   "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "copy": "node tools/copy.js README.md dist/ngx-formly-tabs/README.md",
+    "copy": "node tools/copy.js README.md dist/ngx-formly-tabs/README.md && node tools/copy.js LICENSE dist/ngx-formly-tabs/LICENSE",
     "build_lib": "ng build --prod ngx-formly-tabs",
     "npm_pack": "npm run copy && cd dist/ngx-formly-tabs && npm pack",
     "package": "npm run build_lib && npm run npm_pack"
