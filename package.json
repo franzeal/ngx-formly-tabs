@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run build_lib && ng serve",
+    "build": "ng build ngx-formly-tabs && ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
