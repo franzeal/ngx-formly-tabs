@@ -1,7 +1,7 @@
 import { AfterContentInit, Component, OnDestroy } from '@angular/core';
 import { TabsetService } from './tabset.service';
 import { TabComponent } from '../tab/tab.component';
-import { Observable, Subscription, timer } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'formly-tabs-tabset',
@@ -27,7 +27,7 @@ export class TabsetComponent implements AfterContentInit, OnDestroy {
     }
 
     ngAfterContentInit(): void {
-        this.subscription = this.tabsetService.tabs$.subscribe(tabs => {
+        this.subscription = this.tabsetService.tabs$.subscribe(() => {
             this.onTabsChanged();
         });
     }
@@ -45,7 +45,7 @@ export class TabsetComponent implements AfterContentInit, OnDestroy {
     }
 
     private onTabsChanged(): void {
-        timer().subscribe(() => {
+        Promise.resolve().then(() => {
             if (this.subscription.closed) {
                 return;
             }
