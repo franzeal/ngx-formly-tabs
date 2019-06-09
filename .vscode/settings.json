@@ -2,14 +2,15 @@
 {
   "files.exclude": {
     "dist": true,
-    "**/*.map": true
+    "**/*.map": true,
+    "**/node_modules": true
   },
   "files.trimTrailingWhitespace": true,
   "[markdown]": {
       "editor.tabSize": 2
   },
   "[typescript]": {
-    "editor.tabSize": 4
+    "editor.tabSize": 2
   },
   "[css]": {
     "editor.tabSize": 2

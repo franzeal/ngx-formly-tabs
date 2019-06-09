@@ -28,9 +28,9 @@
   },
   "homepage": "https://github.com/franzeal/ngx-formly-tabs#readme",
   "peerDependencies": {
-    "@angular/common": "^6.0.0",
-    "@angular/core": "^6.0.0",
-    "@angular/forms": "^6.0.0",
+    "@angular/common": ">=6.0.0",
+    "@angular/core": ">=6.0.0",
+    "@angular/forms": ">=6.0.0",
     "@ngx-formly/core": "^4.0.0",
     "rxjs": "^6.0.0"
   }

@@ -29,7 +29,8 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.slim.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            ],
+            "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
@@ -47,7 +48,14 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
@@ -102,6 +110,7 @@
     "ngx-formly-tabs-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
+      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
@@ -130,18 +139,13 @@
       "root": "projects/ngx-formly-tabs",
       "sourceRoot": "projects/ngx-formly-tabs/src",
       "projectType": "library",
-      "prefix": "formly-tabs",
+      "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "projects/ngx-formly-tabs/tsconfig.lib.json",
             "project": "projects/ngx-formly-tabs/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/ngx-formly-tabs/ng-package.prod.json"
-            }
           }
         },
         "test": {
