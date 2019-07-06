@@ -1,6 +1,6 @@
 {
   "name": "ngx-formly-tabs-app",
-  "version": "1.1.0",
+  "version": "5.0.0",
   "scripts": {
     "ng": "ng",
     "start": "npm run build_lib && ng serve",
@@ -23,8 +23,8 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
-    "@ngx-formly/bootstrap": "^4.7.2",
-    "@ngx-formly/core": "^4.7.2",
+    "@ngx-formly/bootstrap": "^5.1.9",
+    "@ngx-formly/core": "^5.1.9",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",

@@ -1,18 +1,24 @@
 import { ConfigOption } from '@ngx-formly/core';
 import {
-    FormlyWrapperTabsetComponent,
+    FormlyFieldTabsetComponent
+} from './types/types';
+import {
     FormlyWrapperTabComponent
 } from './wrappers/wrappers';
 
 export const FIELD_TYPE_COMPONENTS = [
+    // types
+    FormlyFieldTabsetComponent,
+
     // wrappers
-    FormlyWrapperTabComponent,
-    FormlyWrapperTabsetComponent
+    FormlyWrapperTabComponent
 ];
 
 export const FORMLY_TABS_FORMLY_CONFIG: ConfigOption = {
+    types: [
+        { name: 'tabset', component: FormlyFieldTabsetComponent }
+    ],
     wrappers: [
-        { name: 'tabset', component: FormlyWrapperTabsetComponent },
         { name: 'tab', component: FormlyWrapperTabComponent }
     ]
 };

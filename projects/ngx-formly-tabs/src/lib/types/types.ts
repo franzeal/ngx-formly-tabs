@@ -1,0 +1,1 @@
+export { FormlyFieldTabsetComponent } from './tabset';

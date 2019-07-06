@@ -55,7 +55,7 @@ export class AppComponent {
   model = { email: 'email@gmail.com' };
   fields: FormlyFieldConfig[] = [
     {
-      wrappers: ['tabset'],
+      type: 'tabset',
       fieldGroup: [
         {
           wrappers: ['tab'],
