@@ -1,5 +1,6 @@
 import { ConfigOption } from '@ngx-formly/core';
 import {
+    FormlyFieldTabComponent,
     FormlyFieldTabsetComponent
 } from './types/types';
 import {
@@ -8,6 +9,7 @@ import {
 
 export const FIELD_TYPE_COMPONENTS = [
     // types
+    FormlyFieldTabComponent,
     FormlyFieldTabsetComponent,
 
     // wrappers
@@ -16,6 +18,7 @@ export const FIELD_TYPE_COMPONENTS = [
 
 export const FORMLY_TABS_FORMLY_CONFIG: ConfigOption = {
     types: [
+        { name: 'tab', component: FormlyFieldTabComponent },
         { name: 'tabset', component: FormlyFieldTabsetComponent }
     ],
     wrappers: [

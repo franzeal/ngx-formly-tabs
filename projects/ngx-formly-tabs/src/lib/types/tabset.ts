@@ -1,5 +1,6 @@
 import { AfterContentInit, Component, ElementRef } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
+import { TabsetService } from '../tabset/tabset.service';
 import { addClassName } from '../util';
 
 @Component({
@@ -8,7 +9,8 @@ import { addClassName } from '../util';
         <formly-tabs-tabset>
             <formly-field *ngFor="let f of field.fieldGroup" [field]="f"></formly-field>
         </formly-tabs-tabset>
-    `
+    `,
+    providers: [TabsetService]
 })
 export class FormlyFieldTabsetComponent extends FieldType implements AfterContentInit {
     constructor(

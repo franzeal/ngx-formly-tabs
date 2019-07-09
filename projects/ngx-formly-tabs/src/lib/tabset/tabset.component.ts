@@ -6,8 +6,7 @@ import { Subscription } from 'rxjs';
 @Component({
     selector: 'formly-tabs-tabset',
     templateUrl: './tabset.component.html',
-    styleUrls: ['./tabset.component.css'],
-    providers: [TabsetService]
+    styleUrls: ['./tabset.component.css']
 })
 export class TabsetComponent implements AfterContentInit, OnDestroy {
     private subscription: Subscription;

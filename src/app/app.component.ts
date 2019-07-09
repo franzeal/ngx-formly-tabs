@@ -13,7 +13,7 @@ export class AppComponent {
             className: 'd-block',
             fieldGroup: [
                 {
-                    wrappers: ['tab'],
+                    type: 'tab',
                     templateOptions: {
                         tabTitle: 'Primary',
                     },

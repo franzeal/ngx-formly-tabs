@@ -34,7 +34,7 @@ import {FormlyTabsModule} from 'ngx-formly-tabs';
 export class AppModule {}
 ```
 
-#### 3. Use the tabset and tab wrappers within the form config of your component:
+#### 3. Use the tabset type together with tab types/wrappers within the form config of your component:
 
 ```typescript
 import {Component} from '@angular/core';
@@ -58,7 +58,7 @@ export class AppComponent {
       type: 'tabset',
       fieldGroup: [
         {
-          wrappers: ['tab'],
+          type: 'tab',
           templateOptions: {
             tabTitle: 'Primary'
           },
