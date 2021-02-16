@@ -1,7 +1,7 @@
-import { AfterContentInit, Component, OnDestroy } from '@angular/core';
-import { TabsetService } from './tabset.service';
-import { TabComponent } from '../tab/tab.component';
+import { AfterContentInit, Component, EventEmitter, OnDestroy, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { TabComponent } from '../tab/tab.component';
+import { TabsetService } from './tabset.service';
 
 @Component({
     selector: 'formly-tabs-tabset',
@@ -9,6 +9,8 @@ import { Subscription } from 'rxjs';
     styleUrls: ['./tabset.component.css']
 })
 export class TabsetComponent implements AfterContentInit, OnDestroy {
+    @Output() activeTabChange = new EventEmitter<string>();
+
     private subscription: Subscription;
     private _tabs: TabComponent[] = [];
     private _visibleCount = 0;
@@ -41,6 +43,7 @@ export class TabsetComponent implements AfterContentInit, OnDestroy {
         this.tabsetService.tabs.forEach(t => {
             t.active = t === tab;
         });
+        this.activeTabChange.emit(tab ? tab.title : null);
     }
 
     private onTabsChanged(): void {

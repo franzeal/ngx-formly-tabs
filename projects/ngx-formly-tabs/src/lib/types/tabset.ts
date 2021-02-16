@@ -6,7 +6,7 @@ import { addClassName } from '../util';
 @Component({
     selector: 'formly-field-tabset',
     template: `
-        <formly-tabs-tabset>
+        <formly-tabs-tabset (activeTabChange)="onActiveTagChange($event)">
             <formly-field *ngFor="let f of field.fieldGroup" [field]="f"></formly-field>
         </formly-tabs-tabset>
     `,
@@ -23,7 +23,18 @@ export class FormlyFieldTabsetComponent extends FieldType implements AfterConten
         return this.to.tabsetClassName;
     }
 
+    get activeTab(): string {
+        return this.to.activeTab;
+    }
+
     ngAfterContentInit(): void {
         addClassName(this.elementRef.nativeElement, this.tabsetClassName);
+    }
+
+    onActiveTagChange(tabTitle: string): void {
+        this.to.activeTab = tabTitle == null ? null : tabTitle;
+        if (this.to.activeTabChange) {
+            this.to.activeTabChange(this.to.activeTab);
+        }
     }
 }

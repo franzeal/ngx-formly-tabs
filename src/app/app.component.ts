@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'ngx-formly-tabs';
-    pristineFields = [
+    options = { formState: {} as { [key: string]: any } };
+    fields = [
         {
             type: 'tabset',
             className: 'd-block',
@@ -49,27 +50,54 @@ export class AppComponent {
                         'templateOptions.tabDisabled': 'model.disableSecondary === true'
                     }
                 }
-            ]
+            ],
+            templateOptions: {
+                activeTabChange: (tabTitle: string) => {
+                    this.options.formState.activeTab = tabTitle;
+                }
+            }
+        },
+        {
+            key: 'primaryText',
+            type: 'input',
+            className: 'app-d-block mt-4',
+            templateOptions: {
+                label: 'Occupation'
+            },
+            hideExpression: 'formState.activeTab !== \'Primary\''
+        },
+        {
+            key: 'secondaryText',
+            type: 'input',
+            className: 'app-d-block mt-4',
+            templateOptions: {
+                label: 'Activity'
+            },
+            hideExpression: 'formState.activeTab !== \'Secondary\''
         },
         {
             key: 'hidePrimary',
             type: 'checkbox',
-            className: 'd-block mt-4',
+            className: 'app-d-block mt-4',
             templateOptions: {
                 label: 'Hide Primary'
             },
-            defaultValue: false
+            expressionProperties: {
+                'templateOptions.tabDisabled': 'formState.disableSecondary === true'
+            }
         },
         {
             key: 'disableSecondary',
             type: 'checkbox',
-            className: 'd-block mt-4',
+            className: 'app-d-block mt-4',
             templateOptions: {
                 label: 'Disable Secondary'
             },
-            defaultValue: false
+            expressionProperties: {
+                'templateOptions.tabDisabled': 'model.disableSecondary === true'
+            }
         }
     ];
-    fields = JSON.parse(JSON.stringify(this.pristineFields));
+    pristineFields = JSON.parse(JSON.stringify(this.fields));
     model = {};
 }
