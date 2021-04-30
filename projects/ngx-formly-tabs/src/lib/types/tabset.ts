@@ -1,7 +1,6 @@
-import { AfterContentInit, Component, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 import { TabsetService } from '../tabset/tabset.service';
-import { addClassName } from '../util';
 
 @Component({
     selector: 'formly-field-tabset',
@@ -10,25 +9,15 @@ import { addClassName } from '../util';
             <formly-field *ngFor="let f of field.fieldGroup" [field]="f"></formly-field>
         </formly-tabs-tabset>
     `,
+    host: {
+        '[class]': 'field.fieldGroupClassName || ""',
+    },
     providers: [TabsetService]
 })
-export class FormlyFieldTabsetComponent extends FieldType implements AfterContentInit {
-    constructor(
-        private elementRef: ElementRef
-    ) {
-        super();
-    }
-
-    get tabsetClassName(): string {
-        return this.to.tabsetClassName;
-    }
+export class FormlyFieldTabsetComponent extends FieldType {
 
     get activeTab(): string {
         return this.to.activeTab;
-    }
-
-    ngAfterContentInit(): void {
-        addClassName(this.elementRef.nativeElement, this.tabsetClassName);
     }
 
     onActiveTagChange(tabTitle: string): void {

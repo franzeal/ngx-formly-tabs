@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FieldType, FormlyFieldConfig } from '@ngx-formly/core';
+import { FieldType } from '@ngx-formly/core';
 
 @Component({
     selector: 'formly-field-tab',
@@ -7,9 +7,13 @@ import { FieldType, FormlyFieldConfig } from '@ngx-formly/core';
         <formly-tabs-tab [title]="title" [disabled]="disabled" [hidden]="hidden">
             <formly-field *ngFor="let f of field.fieldGroup" [field]="f"></formly-field>
         </formly-tabs-tab>
-    `
+    `,
+    host: {
+        '[class]': 'field.fieldGroupClassName || ""',
+    }
 })
 export class FormlyFieldTabComponent extends FieldType {
+
     get title(): string {
         return this.to.tabTitle;
     }
